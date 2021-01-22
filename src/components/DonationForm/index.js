@@ -14,7 +14,7 @@ const DonationForm = () => {
     donors,
     setDonors
   } = useContext(DonationContext);
-  const progressValue = donated > DONATION_GOAL ? 100 : (donated / DONATION_GOAL) * 100;
+  const progressValue = donated >= DONATION_GOAL ? 100 : (donated / DONATION_GOAL) * 100;
 
   const handleDonationSubmit = (donationAmount) => {
     // Update donated state
