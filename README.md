@@ -24,6 +24,5 @@ npm run build
 
 ## Deploy
 
-1. Change webpack.config.js environment to `mode: "production"`
-2. Run the build command
-3. Deploy to github using `npm run deploy` command
+1. Run the build command
+2. Deploy to github using `npm run deploy` command
