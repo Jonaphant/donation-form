@@ -24,3 +24,9 @@
   transform: rotate(45deg);
   z-index: -10;
 }
+
+.dollar:before {
+  content: '$';
+  font-size: 11px;
+  vertical-align: top;
+}

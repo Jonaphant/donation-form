@@ -14,9 +14,9 @@ const TextBubble = () => {
     <div className="text-bubble-container">
       <div className="text-bubble">
         {isDonationGoalReached ? (
-          <p className="message font-ibm-plex font-bold">Our donation goal of ${numberWithCommas(DONATION_GOAL)} has been reached!</p>
+          <p className="message font-ibm-plex font-bold">Our donation goal of <span className="dollar">{numberWithCommas(DONATION_GOAL)}</span> has been reached!</p>
         ) : (
-          <p className="message font-ibm-plex"><span className="font-bold">${numberWithCommas(donationsNeeded)}</span> still needed to fund this project</p>
+          <p className="message font-ibm-plex"><span className="font-bold dollar">{numberWithCommas(donationsNeeded)}</span> still needed to fund this project</p>
         )}
       </div>
       <div className="point"></div>
