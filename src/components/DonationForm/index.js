@@ -1,14 +1,12 @@
 import React from 'react';
 import './index.css';
 
-import TextBubble from '../TextBubble';
 import ProgressBar from './ProgressBar';
 import Input from '../Input';
 
 const DonationForm = () => {
   return (
     <div>
-      <TextBubble />
       <ProgressBar />
       <div className="donation-card">
         <div>

@@ -31,3 +31,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.donation-container {
+  width: 400px;
+}
