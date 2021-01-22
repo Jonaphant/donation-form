@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './index.css';
 
 import { numberWithCommas } from '../../utils/index';
+import { MIN_DONATION } from '../../utils/constants';
 import ValidationMessage from '../ValidationMessage';
 
 const Input = ({ onClick }) => {
@@ -31,7 +32,7 @@ const Input = ({ onClick }) => {
       }, 3000);
     } else {
 
-      if (donationAmount >= 5) {
+      if (donationAmount >= MIN_DONATION) {
         onClick(donationAmount)
 
         // Display success validation
@@ -44,7 +45,7 @@ const Input = ({ onClick }) => {
         startTimer(() => setShowValidation(false), 3000);
       } else {
         // Display error validation
-        setValidationData({ message: `Donations must be $5 or more`, type: 'error' })
+        setValidationData({ message: `Donations must be $${numberWithCommas(MIN_DONATION)} or more`, type: 'error' })
         setShowValidation(true);
         startTimer(() => setShowValidation(false), 3000);
       }
