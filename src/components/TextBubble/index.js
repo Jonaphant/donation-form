@@ -6,7 +6,7 @@ import { DonationContext } from '../../provider/DonationContext';
 
 const TextBubble = () => {
   const { donated } = useContext(DonationContext);
-  const donationsNeeded = DONATION_GOAL - donated;
+  const donationsNeeded = donated >= DONATION_GOAL ? 0 : DONATION_GOAL - donated;
 
   return (
     <div className="text-bubble-container">
