@@ -4,7 +4,9 @@ import './App.css';
 
 const App = () => {
   return (
-    <DonationForm />
+    <div className="app-container">
+      <DonationForm />
+    </div>
   )
 }
 
