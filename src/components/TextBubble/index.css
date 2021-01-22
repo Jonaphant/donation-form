@@ -22,4 +22,5 @@
   bottom: -8px;
   background-color: #e3ebfc;
   transform: rotate(45deg);
+  z-index: -10;
 }
