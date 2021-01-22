@@ -1,14 +1,19 @@
 import React from 'react';
+import './App.css';
+
+import { DonationProvider } from './provider/DonationContext';
+
 import DonationForm from './components/DonationForm';
 import TextBubble from './components/TextBubble';
-import './App.css';
 
 const App = () => {
   return (
     <div className="app-container">
       <div className="donation-container">
-        <TextBubble />
-        <DonationForm />
+        <DonationProvider>
+          <TextBubble />
+          <DonationForm />
+        </DonationProvider>
       </div>
     </div>
   )
