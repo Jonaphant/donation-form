@@ -33,7 +33,7 @@ const DonationForm = () => {
       <ProgressBar progressValue={progressValue} />
       <div className="donation-card">
         <div>
-          <p className="font-bold font-poppins donation-header">Only four days left to fund this project</p>
+          <h1 className="font-bold font-poppins donation-header">Only four days left to fund this project</h1>
           <p className="font-ibm-plex sub-header">Join the <span className="font-bold">{donors}</span> other donors who have already supported this project.</p>
         </div>
         <Input onClick={handleDonationSubmit} />

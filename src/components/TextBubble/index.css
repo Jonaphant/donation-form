@@ -5,7 +5,7 @@
 }
 
 .text-bubble {
-  background-color: #c1d1f7;
+  background-color: #e3ebfc;
   padding: 7px 15px;
   border-radius: 7px;
 }
@@ -20,6 +20,6 @@
   width: 20px;
   right: 30px;
   bottom: -8px;
-  background-color: #c1d1f7;
+  background-color: #e3ebfc;
   transform: rotate(45deg);
 }

@@ -22,9 +22,12 @@ const Input = ({onClick}) => {
       <input
         type="number"
         name="donated"
-        className="input-field font-ibm-plex font-bold"
+        id="input-field"
+        className="font-ibm-plex font-bold"
         placeholder="50" 
       />
+      {/* Hidden label for accessibility/screen readers */}
+      <label htmlFor="input-field" id="input-field-label">Donate</label>
       <button
         type="submit"
         className="submit font-ibm-plex font-bold"
