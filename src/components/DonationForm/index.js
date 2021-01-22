@@ -1,39 +1,37 @@
-import React, { useContext } from 'react';
+import React, { useState }  from 'react';
 import './index.css';
 
 import { DONATION_GOAL } from '../../utils/constants';
-import { DonationContext } from '../../provider/DonationContext';
+import { numberWithCommas } from '../../utils/index';
 
-import ProgressBar from './ProgressBar';
-import Input from '../Input';
+import DonationCard from '../DonationCard';
+import TextBubble from '../TextBubble';
 
 const DonationForm = () => {
-  const {
-    donated,
-    setDonated,
-    donors,
-    setDonors
-  } = useContext(DonationContext);
-  const progressValue = donated >= DONATION_GOAL ? 100 : (donated / DONATION_GOAL) * 100;
+  const [donated, setDonated] = useState(0);
+  const [donors, setDonors] = useState(0);
 
-  const handleDonationSubmit = (donationAmount) => {
-    // Update donated state
-    setDonated(prev => prev + donationAmount);
+  const isDonationGoalReached = donated >= DONATION_GOAL;
+  const donationsNeeded = isDonationGoalReached ? 0 : DONATION_GOAL - donated;
+  const progress = isDonationGoalReached ? 100 : (donated / DONATION_GOAL) * 100;
 
-    // Increment donor state
-    setDonors(prev => prev + 1);
-  }
+  const message = (
+    isDonationGoalReached ? (
+      <p className="message font-ibm-plex font-bold">Our donation goal of <span className="dollar">{numberWithCommas(DONATION_GOAL)}</span> has been reached!</p>
+    ) : (
+      <p className="message font-ibm-plex"><span className="font-bold dollar">{numberWithCommas(donationsNeeded)}</span> still needed to fund this project</p>
+    )
+  );
 
   return (
-    <div>
-      <ProgressBar progressValue={progressValue} />
-      <div className="donation-card">
-        <div>
-          <h1 className="font-bold font-poppins donation-header">Only four days left to fund this project</h1>
-          <p className="font-ibm-plex sub-header">Join the <span className="font-bold">{donors}</span> other donors who have already supported this project.</p>
-        </div>
-        <Input onClick={handleDonationSubmit} />
-      </div>
+    <div className="donation-container">
+      <TextBubble message={message} />
+      <DonationCard
+        donors={donors}
+        setDonors={setDonors}
+        setDonated={setDonated}
+        progress={progress}  
+      />
     </div>
   )
 }
