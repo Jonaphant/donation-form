@@ -1,7 +1,7 @@
 .donation-card {
   width: 400px;
   background-color: #ffffff;
-  box-shadow: 0px 0px 13px -1px rgba(6, 18, 46, 0.3);
+  box-shadow: 0px 0px 13px -1px rgba(6, 18, 46, 0.1);
   padding: 30px 26px;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
@@ -23,4 +23,8 @@
 .donation-header {
   font-size: x-large;
   margin-bottom: 20px;
+}
+
+.sub-header {
+  margin-bottom: 35px;
 }
