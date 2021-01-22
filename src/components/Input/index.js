@@ -24,31 +24,30 @@ const Input = ({ onClick }) => {
 
     if (isNaN(donationAmount)) {
       // Display error validation
-      setValidationData({ message: `Please enter digits`, type: 'error' })
+      setValidationData({ message: `Please enter a number`, type: 'error' })
       setShowValidation(true);
-      setTimeout(() => {
-        setShowValidation(false);
+      startTimer(() => {
+        setShowValidation(false)
       }, 3000);
-
-      return;
-    }
-
-    if (donationAmount >= 5) {
-      onClick(donationAmount)
-
-      // Display success validation
-      const formattedAmount = numberWithCommas(donationAmount)
-      setValidationData({
-        message: `Thanks for donating $${formattedAmount}!`,
-        type: 'success'
-      });
-      setShowValidation(true);
-      startTimer(() => setShowValidation(false), 3000);
     } else {
-      // Display error validation
-      setValidationData({ message: `Donations must be $5 or more`, type: 'error' })
-      setShowValidation(true);
-      startTimer(() => setShowValidation(false), 3000);
+
+      if (donationAmount >= 5) {
+        onClick(donationAmount)
+
+        // Display success validation
+        const formattedAmount = numberWithCommas(donationAmount)
+        setValidationData({
+          message: `Thanks for donating $${formattedAmount}!`,
+          type: 'success'
+        });
+        setShowValidation(true);
+        startTimer(() => setShowValidation(false), 3000);
+      } else {
+        // Display error validation
+        setValidationData({ message: `Donations must be $5 or more`, type: 'error' })
+        setShowValidation(true);
+        startTimer(() => setShowValidation(false), 3000);
+      }
     }
 
     // Reset form
