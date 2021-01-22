@@ -1,0 +1,25 @@
+.text-bubble-container {
+  position: relative;
+  margin-bottom: 17px;
+  width: 100%;
+}
+
+.text-bubble {
+  background-color: #c1d1f7;
+  padding: 7px 15px;
+  border-radius: 7px;
+}
+
+.message {
+  color: #356ae6;
+}
+
+.point {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  right: 30px;
+  bottom: -8px;
+  background-color: #c1d1f7;
+  transform: rotate(45deg);
+}
