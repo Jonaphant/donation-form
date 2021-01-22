@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Poppins:wght@700&display=swap');
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Theme fonts */
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-ibm-plex {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.font-bold {
+  font-weight: 700;
+}
