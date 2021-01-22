@@ -17,15 +17,11 @@ const DonationForm = () => {
   const progressValue = donated > DONATION_GOAL ? 100 : (donated / DONATION_GOAL) * 100;
 
   const handleDonationSubmit = (donationAmount) => {
-    const parsedAmount = parseInt(donationAmount);
+    // Update donated state
+    setDonated(prev => prev + donationAmount);
 
-    if (!isNaN(parsedAmount)) {
-      // Update donated state
-      setDonated(prev => prev + parsedAmount);
-
-      // Increment donor state
-      setDonors(prev => prev + 1);
-    }
+    // Increment donor state
+    setDonors(prev => prev + 1);
   }
 
   return (

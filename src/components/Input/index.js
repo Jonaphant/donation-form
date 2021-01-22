@@ -3,11 +3,18 @@ import './index.css';
 
 const Input = ({onClick}) => {
   const handleSubmit = (e) => {
-    // Validation
-
     // Update donationAmount state
     const donationAmount = parseInt(e.target.donated.value);
-    onClick(donationAmount)
+
+    if (!isNaN(donationAmount)) {
+      onClick(donationAmount)
+
+      // Display success validation
+
+    } else {
+      // Display error validation
+      
+    }
 
     // Reset form
     e.target.reset()
