@@ -1,8 +1,9 @@
 import React from 'react';
+import DonationForm from './components/DonationForm';
 
 const App = () => {
   return (
-    <h1>Donation Form</h1>
+    <DonationForm />
   )
 }
 
