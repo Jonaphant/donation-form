@@ -24,6 +24,15 @@ body {
   font-weight: 700;
 }
 
+/* Validation Colors */
+.success {
+  color: #19cca3;
+}
+
+.error {
+  color: #f3376b;
+}
+
 .app-container {
   width: 100%;
   height: 80vh;
