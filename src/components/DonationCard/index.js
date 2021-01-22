@@ -20,7 +20,9 @@ const DonationCard = ({donors, setDonors, setDonated, progress}) => {
       <div className="donation-card">
         <div>
           <h1 className="font-bold font-poppins donation-header">Only four days left to fund this project</h1>
-          <p className="font-ibm-plex sub-header">Join the <span className="font-bold">{donors}</span> other donors who have already supported this project.</p>
+          <p className="font-ibm-plex sub-header">
+            Join the <span className="font-bold">{donors}</span> other donors who have already supported this project.
+          </p>
         </div>
         <Input onClick={handleDonationSubmit} />
       </div>
