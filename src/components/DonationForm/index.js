@@ -1,13 +1,20 @@
 import React, { useContext } from 'react';
 import './index.css';
 
+import { DONATION_GOAL } from '../../utils/constants';
 import { DonationContext } from '../../provider/DonationContext';
 
 import ProgressBar from './ProgressBar';
 import Input from '../Input';
 
 const DonationForm = () => {
-  const { setDonated, donors, setDonors } = useContext(DonationContext);
+  const {
+    donated,
+    setDonated,
+    donors,
+    setDonors
+  } = useContext(DonationContext);
+  const progressValue = donated > DONATION_GOAL ? 100 : (donated / DONATION_GOAL) * 100;
 
   const handleDonationSubmit = (donationAmount) => {
     const parsedAmount = parseInt(donationAmount);
@@ -23,7 +30,7 @@ const DonationForm = () => {
 
   return (
     <div>
-      <ProgressBar />
+      <ProgressBar progressValue={progressValue} />
       <div className="donation-card">
         <div>
           <p className="font-bold font-poppins donation-header">Only four days left to fund this project</p>
