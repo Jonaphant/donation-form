@@ -15,9 +15,12 @@
 
 .progress-bar {
   height: 12px;
-  width: 70%;
   border-top-left-radius: 7px;
   background-color: #1bddb1;
+}
+
+.full-progress {
+  border-top-right-radius: 7px;
 }
 
 .donation-header {
