@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './index.css';
 
+import { numberWithCommas } from '../../utils/index';
 import ValidationMessage from '../ValidationMessage';
 
 const Input = ({ onClick }) => {
@@ -15,7 +16,11 @@ const Input = ({ onClick }) => {
       onClick(donationAmount)
 
       // Display success validation
-      setValidationData({ message: `Thanks for donating $${donationAmount}!`, type: 'success' })
+      const formattedAmount = numberWithCommas(donationAmount)
+      setValidationData({
+        message: `Thanks for donating $${formattedAmount}!`,
+        type: 'success'
+      })
       setShowValidation(true);
       setTimeout(() => {
         setShowValidation(false);
